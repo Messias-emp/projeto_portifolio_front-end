@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emanuel Pinheiro | Front-End</title>
+  <meta name="description"
+    content="Portfólio da desenvolvedora front-end Elidiana Andrade para compartilhar projetos e habilidades desenvolvidas.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+  <header class="header">
+    <nav class="header__nav">
+      <ul class="menu menu--principal">
+        <li class="menu__item">
+          <a class="menu__link active" href="#home">
+            <span class="menu__text">Home</span>
+          </a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="#projetos">
+            <span class="menu__text">Projetos</span>
+          </a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="#sobre">
+            <span class="menu__text">Sobre</span>
+          </a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="#contato">
+            <span class="menu__text">Contato</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="header__brand">
+      <a href="#home">
+        <img class="brand__logo" src="assets/images/logo-ea.png" alt="Logo EA">
+      </a>
+    </div>
+    <div class="header__toggle">
+      <i id="toggleTheme" class="bi bi-sun"></i>
+    </div>
+  </header>
+  <nav class="nav--mobile">
+    <ul class="menu menu--mobile">
+      <li class="menu__item">
+        <a class="menu__link active" href="#home">
+          <i class="menu__icon bi bi-house-door"></i>
+          <span class="menu__text">Home</span>
+        </a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link" href="#projetos">
+          <i class="menu__icon bi bi-window-stack"></i>
+          <span class="menu__text">Projetos</span>
+        </a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link" href="#sobre">
+          <i class="menu__icon bi bi-person"></i>
+          <span class="menu__text">Sobre</span>
+        </a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link" href="#contato">
+          <i class="menu__icon bi bi-envelope"></i>
+          <span class="menu__text">Contato</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <main id="home">
+    <div class="main__content1">
+      <p>Emanuel Pinheiro, um Desenvolvedor Front-end.</p>
+      <h1><b>Soluções Criativas & Imersivas</b> no Desenvolvimento Front-End</h1>
+
+      <ul class="menu menu--social">
+        <li>
+          <a class="menu__link" href="https://github.com/Messias-emp" target="_blank">
+            <i class="menu__icon bi bi-github"></i>
+          </a>
+        </li>
+        <li>
+          <a class="menu__link" href="https://www.linkedin.com/in/emanuel-pinheiro/" target="_blank">
+            <i class="menu__icon bi bi-linkedin"></i>
+          </a>
+        </li>
+        <li>
+          <a class="menu__link" href="" target="_blank">
+            <i class="menu__icon bi bi-instagram"></i>
+          </a>
+        </li>
+      </ul>
+      <a href="#projetos">
+        <button class="btn btn--primary">
+          <span>Ver Projetos</span>
+          <i class="bi bi-arrow-down-right"></i>
+        </button>
+      </a>
+
+      <section class="technologies">
+
+        <h2>Conhecimento nas principais tecnologias do mercado</h2>
+
+
+
+        <div class="tec-icons-container">
+          <div class="tec-icons-scroll">
+            <!-- Ícones duplicados para efeito contínuo -->
+            <i class="devicon-html5-plain colored" title="HTML5"></i>
+            <i class="devicon-css3-plain colored" title="CSS3"></i>
+            <i class="devicon-javascript-plain colored" title="JavaScript"></i>
+            <i class="devicon-java-plain colored" title="Java"></i>
+            <i class="devicon-nodejs-plain colored" title="Node.js"></i>
+            <i class="devicon-react-original colored" title="React"></i>
+            <i class="devicon-vite-original colored" title="Vite"></i>
+            <i class="devicon-github-original colored" title="GitHub"></i>
+
+            <!-- Duplicado -->
+            <i class="devicon-html5-plain colored" title="HTML5"></i>
+            <i class="devicon-css3-plain colored" title="CSS3"></i>
+            <i class="devicon-javascript-plain colored" title="JavaScript"></i>
+            <i class="devicon-java-plain colored" title="Java"></i>
+            <i class="devicon-nodejs-plain colored" title="Node.js"></i>
+            <i class="devicon-react-original colored" title="React"></i>
+            <i class="devicon-vite-original colored" title="Vite"></i>
+            <i class="devicon-github-original colored" title="GitHub"></i>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <section id="projetos" class="projects">
+    <h2>Projetos</h2>
+    <div class="projects__container">
+      <div class="projects__card">
+        <div class="cards-carousel" style="transform: translateZ(-40vw) rotateY(0deg);">
+          <!-- Projeto 1 -->
+          <a href="https://emp-yougiho.netlify.app/" target="_blank" class="card active" id="yougiho">
+            <img class="card__background" src="">
+            <img class="card__image" src="./assets/images/projects/jogo-cartas.png" alt="Projeto jogo de Cartas">
+            <h2 class="card__title">Projeto jogo de Cartas</h2>
+          </a>
+
+          <!-- Projeto 2 -->
+          <a href="https://emp-pokedex.netlify.app/" target="_blank" class="card" id="pokedex">
+            <img class="card__background" src="">
+            <img class="card__image" src="./assets/images/projects/pokedex.png" alt="Projeto Pokdex">
+            <h2 class="card__title">Projeto Pokdex</h2>
+          </a>
+
+          <!-- Projeto 3 -->
+          <a href="https://emanuel-pinheiro.netlify.app/" target="_blank" class="card" id="meu-site">
+            <img class="card__background" src="">
+            <img class="card__image" src="./assets/images/projects/meu-site.png"
+              alt="Projeto meu site front-end e back-end em desenvolvimento">
+            <h2 class="card__title">Projeto meu site front-end e back-end em desenvolvimento</h2>
+          </a>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-btn prev" onclick="prevSlide()">&#10094;</button>
+          <button class="carousel-btn next" onclick="nextSlide()">&#10095;</button>
+        </div>
+
+
+        <div class="card__body">
+          <ul class="technologies__list">
+            <li class="technologies__item">
+              <i class="devicon-javascript-plain colored"></i>
+            </li>
+            <li class="technologies__item">
+              <i class="devicon-html5-plain colored"></i>
+            </li>
+            <li class="technologies__item">
+              <i class="devicon-css3-plain colored"></i>
+            </li>
+            <li class="technologies__item">
+              <i class="devicon-github-original colored" title="GitHub"></i>
+            </li>
+          </ul>
+
+          <div class="card__buttons">
+            <a href="https://spidermanmultiverso.netlify.app" target="_blank" class="btn btn--primary">
+              <span>Prévia</span>
+              <i class="bi bi-arrow-up-right"></i>
+            </a>
+            <a href="https://github.com/Messias-emp/EMP-Projeto-jogo-you-gi-ou" target="_blank" class="btn">
+              <span>Repositório</span>
+              <i class="bi bi-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://github.com/Messias-emp?tab=repositories" target="_blank">
+        <button class="btn btn--primary">
+          <span>Ver Todos os Projetos</span>
+          <i class="bi bi-arrow-up-right"></i>
+        </button>
+      </a>
+    </div>
+
+  </section>
+
+  <section id="sobre" class="about">
+    <div class="about__content1">
+      <img class="about__photo" src="assets/images/foto-perfil.jpg" alt="">
+      <div class="about__description">
+        <h2>Sobre mim</h2>
+        <h1>Emanuel Pinheiro...</h1>
+        <p>Olá! Sou um dev web Front-End focado em linguagens de programação e tecnologias web como:
+          <strong>JavaScript</strong>,
+          <strong>HTML</strong>, <strong>CSS</strong>, <strong>Java</strong>, <strong>React.js</strong>,
+          <strong>Node.js</strong>
+          e <strong>Vite</strong>. Utilizo o <strong>GitHub</strong> para versionamento e armazenamento dos meus
+          projetos.
+        </p>
+        <p>Tenho disponibilidade para projetos, trabalhos como freelancer em <i>home office</i> e vínculo <i>CLT</i>,
+          pois almejo
+          fazer transição de carreira e ter a oportunidade do primeiro emprego como <strong>DEV</strong>.</p>
+        <p>Atualmente, estou construindo meu portfólio enquanto aprofundo meus conhecimentos em desenvolvimento
+          front-end,
+          com foco em novas tecnologias, experiências imersivas e responsividade para a web.</p>
+
+        <div class="description__buttons">
+          <a href="https://www.linkedin.com/in/emanuel-pinheiro/" target="_blank">
+            <button class="btn btn--primary">
+              <span>Conecte-se Comigo</span>
+              <i class="bi bi-arrow-up-right"></i>
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="about__content2">
+      <div class="col1">
+
+        <div class="row2">
+          <h3>Experiências</h3>
+          <h4>Desenvolvedor Front-End</h4>
+          <span></span>
+          <span>Produção de sites resposivos e imersivos no Desenvolvimento Front-end.
+          </span>
+          <ul class="about__list">
+            <li class="about__item"></li>
+            <li class="about__item"></li>
+            <li class="about__item"></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col2">
+        <h3>Cursos</h3>
+        <div id="accordion">
+          <div class="accordion__item active">
+            <button class="accordion__header start">
+              <span>Versionamento de Código com Git e GitHub</span>
+              <i class="bi bi-caret-down-fill"></i>
+            </button>
+            <div class="accordion__body">
+              <p>
+                Digital Innovation One. Versionamento de Código com Git e GitHub
+
+                05/04/2025 23:57
+              </p>
+              <p>
+                O que é versionamento de código, Git e GitHub. Como instalar e configurar o Git em diferentes sistemas
+                operacionais e como autenticar via Token e SSH. Como manusear repositórios, indo desde a criação e
+                clonagem
+                até o gerenciamento de branches, passando por todas as etapas de salvar, desfazer e sincronizar
+                alterações
+                com o repositório remoto.
+              </p>
+            </div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__header">
+              <span>Contribuindo em um Projeto Open Source no GitHub</span>
+              <i class="bi bi-caret-down-fill"></i>
+            </button>
+            <div class="accordion__body">
+              <p>
+                Digital Innovation One. Contribuindo em um Projeto Open Source no GitHub
+
+                24/04/2025 02:06
+              </p>
+              <p>
+                Lab prático sobre colaboração em projetos de código aberto.
+              </p>
+            </div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__header end">
+              <span>Organizando Princípios de Desenvolvimento de Software Colaborativo.</span>
+              <i class="bi bi-caret-down-fill"></i>
+            </button>
+            <div class="accordion__body end">
+              <p>
+                Digital Innovation One.Princípios de Desenvolvimento de Software Colaborativo
+
+                12/05/2025 20:12
+              </p>
+              <p>
+                Otimização Princípios de Desenvolvimento de Software Colaborativo.
+              </p>
+            </div>
+          </div>
+        </div>
+  </section>
+
+  <section id="contato" class="contact">
+    <h2>Contate-me</h2>
+    <p>Estou disponível para serviços e novas conexões. Contate-me via
+      e-mail e conecte-se comigo através das minhas redes sociais.
+    </p>
+    <ul class="menu menu--social">
+      <li>
+        <a class="menu__link" href="https://github.com/Messias-emp/" target="_blank">
+          <i class="menu__icon bi bi-github"></i>
+          <span>GitHub</span>
+        </a>
+      </li>
+      <li>
+        <a class="menu__link" href="https://www.linkedin.com/in/emanuel-pinheiro/" target="_blank">
+          <i class="menu__icon bi bi-linkedin"></i>
+          <span>LinkedIn</span>
+        </a>
+      </li>
+      <li>
+        <a class="menu__link" href="" target="_blank">
+          <i class="menu__icon bi bi-instagram"></i>
+          <span>Instagram</span>
+        </a>
+      </li>
+    </ul>
+    <a href="mailto:devemanuelpinheiro@gmail.com">
+      <button class="btn btn--primary">
+        <span class="email">devemanuelpinheiro@gmail.com</span>
+      </button>
+    </a>
+  </section>
+
+  <footer>
+    <p>
+      <a href="https://emanuel-pinheiro.netlify.app/" target="_blank">https://emanuel-pinheiro.netlify.app/</a> por
+      <a href="https://github.com/Messias-emp?tab=repositories" target="_blank">https://github.com/Messias-emp/</a>.
+    </p>
+  </footer>
+  <script src="assets/js/scripts.js"></script>
+</body>
+
+</html>
