@@ -85,14 +85,12 @@ b {
 }
 
 h1 {
-  font-size: 2.5rem;
-  font-weight: 200;
+  font-size: clamp(2.5rem, 5vw + 1rem, 5rem);
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1rem;
   text-align: center;
-  letter-spacing: 0.4rem;
 }
 
 h3 {
@@ -265,7 +263,8 @@ main {
 }
 
 #home {
-  height: 100vh;
+  min-height: 100dvh;
+  /* viewport dinâmica */
   padding: 2rem 2rem;
   display: flex;
   flex-direction: column;
@@ -280,17 +279,18 @@ main {
 
 .main__content1 {
   justify-content: center;
-  margin-top: 250px;
+  margin-top: -1rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  max-width: 600px;
+  max-width: 500px;
 }
 
 .main__content1 p {
   font-size: 1.5rem;
   font-weight: 300;
   text-shadow: 0 0 10px rgba(0, 255, 170, 0.3);
+  margin-top: 7rem;
 }
 
 .main__content1 h1 {
@@ -349,7 +349,7 @@ main {
   margin-top: -11rem;
   background: var(--secondary-bg-color);
   border-radius: 1rem;
-  max-width: 1200px;
+  max-width: 400px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -427,46 +427,60 @@ main {
 }
 
 .projects {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 60px 20px;
+  min-height: 100vh;
+  padding: 4rem 2rem;
   background: linear-gradient(145deg, #b7b4b4, #656161);
   color: #f0f0f0;
-  text-align: center;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .projects__container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 2rem;
+  justify-content: flex-start;
+  gap: 4rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 0px;
+  padding-top: 4rem;
 }
+
 
 .projects__card {
   width: 100%;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 2rem;
-  flex-wrap: wrap;
-
+  margin-top: 1rem;
 }
+
+
+
 
 .cards-carousel {
   position: relative;
   width: 100%;
-  display: flex;
-  overflow: hidden;
+  height: auto;
+  min-height: 500px;
+  /* evita "pulo" se cards tiverem tamanhos diferentes */
 }
 
 
+
+
 .carousel-controls {
-  margin-top: 1rem;
+  margin-top: -17rem;
   display: flex;
   justify-content: center;
   gap: 1rem;
+  align-items: center;
 }
 
 .carousel-btn {
@@ -485,55 +499,52 @@ main {
 }
 
 .card {
-  display: none;
-  flex: 1 0 100%;
-  text-align: center;
-  transition: opacity 0.5s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .card.active {
-  display: block;
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+  z-index: 1;
 }
-
-
-.card:hover {
-  transform: scale(1.03) rotateY(5deg);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
-}
-
-
-.card__background {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
 
 .card__image {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   width: 100%;
-  height: 80%;
-  z-index: 2;
+  height: 100%;
+  border-radius: 0.5rem;
 }
-
 
 .card__title {
-  margin-top: 160px;
-  font-size: 1rem;
+  margin: 0;
+  font-size: 1.5rem;
   font-weight: bold;
+  text-align: center;
   z-index: 3;
 }
-
 
 .card__body {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  width: 45%;
-  justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
+  margin-top: 0;
+}
+
+.card__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 /* Descrição do projeto */
@@ -543,7 +554,6 @@ main {
 
 }
 
-/* Lista de funcionalidades */
 .card__list {
   text-align: left;
   padding-left: 1rem;
@@ -562,19 +572,34 @@ main {
 }
 
 .btn {
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  border: 1px solid #f0f0f0;
-  background-color: transparent;
-  color: #f0f0f0;
-  text-decoration: none;
-  transition: 0.3s ease;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  padding: 0.8rem 1.6rem;
+  border-radius: 2rem;
+  background: transparent;
+  color: #00ffaa;
+  border: 2px solid #00ffaa;
+
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1rem;
+  cursor: pointer;
+  overflow: hidden;
+
+  transition: all 0.4s ease;
 }
 
 .btn:hover {
-  background-color: #f0f0f0;
-  color: #111;
+  background: #00ffaa;
+  color: #111217;
+  box-shadow: 0 0 12px #00ffaa, 0 0 24px #00ffaa70;
+  transform: scale(1.05);
 }
+
 
 .btn--primary {
   background-color: #00ffaa;
@@ -642,23 +667,32 @@ main {
 }
 
 .about {
-
-  display: flex;
-  flex-direction: column;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 60% 40%;
   height: 100vh;
+  gap: 3rem;
 }
 
-.about__content1,
+.about__content1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+
 .about__content2 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 2rem;
+  gap: 1rem;
+  width: 117%;
 }
 
 .about__photo {
-  width: 100%;
+  width: 21%;
   object-fit: cover;
   object-position: center;
   pointer-events: none;
@@ -669,8 +703,12 @@ main {
 .about__description {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  gap: 1.5rem;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.about__description h1 {
+  font-size: 2rem;
 }
 
 .about__icons {
@@ -750,10 +788,10 @@ main {
 }
 
 .contact {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
   gap: 1.5rem;
   border-top: 1px solid var(--primary-border-color);
@@ -782,203 +820,12 @@ footer p {
   padding: 1rem;
 }
 
-/* Responsividade */
-@media (min-width: 768px) {
-  .header {
-    position: fixed;
-    border-bottom: 1px solid var(--primary-border-color);
-    padding: 1rem 6rem;
-    background: var(--primary-bg-color);
-  }
-
-  .nav--mobile {
-    display: none;
-  }
-
-  .header__nav {
-    display: flex;
-  }
-
-  .header__nav,
-  .header__toggle {
-    min-width: 30%;
-  }
-
-  h1 {
-    font-size: 5rem;
-  }
-
-  h2 {
-    font-size: 3rem;
-  }
-
-  main,
-  .projects,
-  .about {
-    padding: 8rem 6rem 4rem 6rem;
-  }
-
-  .contact {
-    padding: 6rem;
-  }
-
-  .contact p {
-    width: 80%;
-  }
-
-  .main__content1 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .technologies {
-    padding: 6.25rem 6rem 2rem 6rem;
-    margin-top: -6rem;
-  }
-
-  footer {
-    margin: 0;
-  }
-}
-
-@media (min-width: 992px) {
-  .projects__card {
-    flex-direction: row;
-  }
-
-  .projects__card.card--reverse {
-    flex-direction: row-reverse;
-    justify-content: space-between;
-  }
-
-  .card__cover {
-    width: 55%;
-  }
-
-  .about {
-    gap: 5rem;
-  }
-
-  .about__content1,
-  .about__content2 {
-    display: grid;
-    grid-template-columns: 34% 60%;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 4rem;
-  }
-
-  .about__description h2 {
-    text-align: left;
-  }
-
-  .description__buttons {
-    justify-content: flex-start;
-  }
-}
-
-@media (min-width: 1200px) {
-
-  h2 {
-    font-size: 4rem;
-  }
-
-  h3 {
-    font-size: 2.5rem;
-  }
-
-  main {
-    padding: 12rem 6rem 2rem;
-  }
-
-  .main__content1 .btn {
-    width: auto;
-  }
-
-  .technologies {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10rem 6rem 4rem;
-  }
-
-  .technologies h2 {
-    font-size: 3rem;
-    width: 55%;
-  }
-
-  .technologies__list {
-    gap: 1rem;
-  }
-
-  .technologies__item {
-    width: 6rem;
-    height: 6rem;
-  }
-
-  .technologies__logo {
-    height: 3rem;
-  }
-
-  p,
-  span,
-  li {
-    font-size: 1.15rem;
-  }
-
-  .card__buttons .btn,
-  .description__buttons .btn {
-    width: auto;
-  }
-}
+/*Ajustes no carrossel para mobile*/
 @media (max-width: 767px) {
-  /* Cada seção ocupa a tela inteira */
-  #home,
-  .projects,
-  .about,
-  .contact {
-    min-height: 100vh;
-    padding: 2rem 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  /* Container dos projetos centralizado */
-  .projects__container {
-    padding: 0;
-    gap: 1rem;
-  }
-
   .projects__card {
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-  }
-
-  /* Apenas um card por vez visível no carrossel */
-  .cards-carousel {
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
-    width: 100%;
-    position: relative;
-  }
-
-  .card {
-    flex: 0 0 100%;
-    display: none;
-    transition: transform 0.5s ease;
-  }
-
-  .card.active {
-    display: block;
-  }
-
-  .card__image {
-    width: 80%;
-    margin: 0 auto;
-    position: relative;
+    gap: 1.5rem;
   }
 
   .card__body {
@@ -991,27 +838,215 @@ footer p {
     justify-content: center;
   }
 
-  .carousel-controls {
-    display: flex;
+  .card__buttons {
+
     justify-content: center;
-    gap: 1rem;
-    margin: 1rem 0;
+    margin-top: 10rem;
   }
+}
 
-  .carousel-btn {
-    padding: 0.5rem 1rem;
-    font-size: 1.2rem;
-  }
+/*Responsividade*/
 
-  .btn {
-    width: 100%;
-  }
-
-  .menu--mobile {
-    display: flex;
+@media (min-width: 768px) {
+  .header {
+    position: fixed;
+    border-bottom: 1px solid var(--primary-border-color);
+    padding: 1.5rem 8vw;
+    background: var(--primary-bg-color);
+    z-index: 10;
   }
 
   .header__nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .nav--mobile {
     display: none;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 6vw, 5rem);
+  }
+
+  h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+  }
+
+  main,
+  .projects,
+  .about {
+    padding: 8rem 8vw 4rem 8vw;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .main__content1 {
+    max-width: 600px;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .technologies {
+    padding: 2rem 4rem;
+    margin-top: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .projects__container {
+    gap: 1rem;
+    margin-top: -4rem;
+  }
+
+  .projects__card {
+    max-width: 1000px;
+  }
+
+  .card__image {
+    max-width: 700px;
+  }
+
+  .about {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+
+  }
+
+  .about__content2 {
+    width: 100%;
+  }
+
+  .contact {
+    padding: 6rem 8vw;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .contact p {
+    width: 100%;
+    font-size: 1.125rem;
+  }
+
+  footer {
+    margin-top: 3rem;
+    padding: 2rem 0;
+    background-color: var(--primary-bg-color);
+  }
+}
+
+/*celular em pe*/
+@media screen and (max-width: 350px) {
+  body {
+    font-size: 0.95rem;
+    padding: 0;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .main__content1 p {
+    font-size: 1.2rem;
+  }
+
+  .card__body {
+    padding: 1rem 0.5rem;
+    text-align: center;
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .technologies {
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+
+  .menu--mobile .menu__link {
+    padding: 0.4rem 0.6rem;
+  }
+
+  .projects {
+    padding: 3rem 1rem;
+
+  }
+
+  .projects__container {
+    display: flex;
+    flex-direction: column;
+    margin-top: -4rem;
+  }
+
+  .about {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  .about__content2 {
+    width: 100%;
+  }
+
+  .about__photo {
+    width: 40%;
+  }
+
+  .cards-carousel {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 232px;
+  }
+
+  .carousel-controls {
+    margin-top: -25rem;
+  }
+}
+
+/*celular deitado*/
+@media screen and (max-height: 350px) {
+  body {
+    font-size: 0.9rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .main__content1 p {
+    margin-top: 7rem;
+  }
+
+  .card__body {
+    padding: 0.8rem;
+  }
+
+  .projects__card {
+    gap: 1.5rem;
+  }
+
+  .card__image {
+    max-width: 90%;
+  }
+
+  .about {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+  }
+
+  .technologies {
+    padding: 1rem;
+    margin-top: 1rem;
   }
 }
